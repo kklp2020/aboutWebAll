@@ -16,7 +16,7 @@ yum install bison
 yum -y install zlib zlib-devel openssl openssl--devel pcre pcre-devel
 
 ```
-####安装nginx
+#### 安装nginx
 ```
 > wget https://nginx.org/download/nginx-1.11.3.tar.gz
 > tar xf nginx-1.11.3.tar.gz
@@ -75,7 +75,7 @@ exit 0
 >service nginx restart
 >service nginx stop
 ```
-####针对centos7 systemctl 操作
+#### 针对centos7 systemctl 操作
 ```
 > vi /lib/systemd/system/nginx.service
 Unit]
@@ -113,7 +113,7 @@ PrivateTmp=True表示给服务分配独立的临时空间
 > systemctl list-units --type=service #查看service
 
 ```
-####PHP安装
+#### PHP安装
 ```
 解决依赖包
 > yum install libxml2-dev
