@@ -124,7 +124,7 @@ PrivateTmp=True表示给服务分配独立的临时空间
 > yum install libpng libpng-devel -y
 > yum install freetype-devel
 > yum -y install libxslt libxslt-devel
-> yum install libpng libpng-devel -y
+> yum install libzip-devel
 > yum install libpng libpng-devel -y
 > yum install libpng libpng-devel -y
 > yum install libpng libpng-devel -y
@@ -188,6 +188,34 @@ PrivateTmp=True表示给服务分配独立的临时空间
 --with-fpm-group=www \
 --without-gdbm \
 --disable-fileinfo
+
+> make && make install
+> cp php.ini.default /usr/local/php7/php.ini  #复制配置文件到php路径
+> cp /usr/local/etc/php-fpm.d/www.conf.default /usr/local/etc/php-fpm.d/www.conf #复制fpm配置文件
+> cp sapi/fpm/php-fpm /usr/local/bin/ #复制执行文件到bin
+> vim /usr/local/php7/php.ini => cgi.fix_pathinfo=0
+> vim /usr/local/etc/php-fpm.d/www.conf
+user = www-data
+group = www-data
+> /usr/local/bin/php-fpm  #开启fpm
+
+> vim /usr/local/nginx/conf/nginx.conf
+location / {
+    root   html;
+    index  index.php index.html index.htm;
+}
+location ~* \.php$ {
+    fastcgi_index   index.php;
+    fastcgi_pass    127.0.0.1:9000;
+    include         fastcgi_params;
+    fastcgi_param   SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+    fastcgi_param   SCRIPT_NAME        $fastcgi_script_name;
+}
+> service nginx start 或  /usr/local/nginx/sbin/nginx -s start
+
+测试phpinfo();
+> echo "<?php phpinfo(); ?>" >> /usr/local/nginx/html/index.php
+
 ```
 ### Swoole
 ```
