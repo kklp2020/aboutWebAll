@@ -78,7 +78,7 @@ exit 0
 #### 针对centos7 systemctl 操作
 ```
 > vi /lib/systemd/system/nginx.service
-Unit]
+[Unit]
 Description=nginx
 After=network.target
   
@@ -136,6 +136,7 @@ PrivateTmp=True表示给服务分配独立的临时空间
 > yum install libpng libpng-devel -y
 > yum install libpng libpng-devel -y
 > yum install libpng libpng-devel -y
+
 
 > tar xf php-7.3.4
 > cd php-7.3.4
