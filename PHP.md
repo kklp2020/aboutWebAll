@@ -107,7 +107,7 @@ PrivateTmp=True表示给服务分配独立的临时空间
 
 保存退出。
 
-> systemctl enable nginx.service
+> systemctl enable nginx.service  开机启动
 > systemctl start nginx.service
 > systemctl stop nginx.service
 > systemctl list-units --type=service #查看service
@@ -126,18 +126,6 @@ PrivateTmp=True表示给服务分配独立的临时空间
 > yum -y install libxslt libxslt-devel
 > yum install libzip-devel
 > yum install libpng libpng-devel -y
-> yum install libpng libpng-devel -y
-> yum install libpng libpng-devel -y
-> yum install libpng libpng-devel -y
-> yum install libpng libpng-devel -y
-> yum install libpng libpng-devel -y
-> yum install libpng libpng-devel -y
-> yum install libpng libpng-devel -y
-> yum install libpng libpng-devel -y
-> yum install libpng libpng-devel -y
-> yum install libpng libpng-devel -y
-
-
 > tar xf php-7.3.4
 > cd php-7.3.4
 > ./configure --prefix=/usr/local/php7
@@ -220,5 +208,7 @@ location ~* \.php$ {
 ```
 ### Swoole
 ```
-sss
+学校
+
+
 ```
