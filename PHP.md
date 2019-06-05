@@ -208,7 +208,34 @@ location ~* \.php$ {
 ```
 ### Swoole
 ```
-学校
-
-
+> git clone https://github.com/swoole/swoole-src.git
+> cd  swoole-src
+> phpize
+> ./configure --enable-coroutine --enable-openssl --enable-http2 --enable-async-redis --enable-sockets --enable-mysqlnd
+> make clean && make && make install
+> extension_dir="/usr/local/php/ext/"
+> extension= swoole.so
+> systemctl restart php-fpm
+> php -m  或 <?pphp phpinfo();?>
+参考(https://wiki.swoole.com/wiki/page/437.html)
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
